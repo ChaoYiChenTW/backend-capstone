@@ -11,7 +11,7 @@ from rest_framework import viewsets
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [IsVisitorForPostOnly]
+    permission_classes = [IsAuthenticated, IsVisitorForPostOnly]
 
 
 class MenuItemView(generics.ListCreateAPIView):
