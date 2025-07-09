@@ -1,4 +1,5 @@
 .env
-littlelemon/littlelemon/__pycache__/*
-littlelemon/Restaurant/migrations/*
 littlelemon/Restaurant/__pycache__/*
+littlelemon/Restaurant/migrations/*
+littlelemon/Restaurant/tests/__pycache__
+littlelemon/littlelemon/__pycache__/*
