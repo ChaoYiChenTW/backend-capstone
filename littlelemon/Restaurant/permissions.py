@@ -12,9 +12,5 @@ class IsVisitorForPostOnly(BasePermission):
         if request.method == "POST":
             return request.user
 
-        # Only Managers can view the list
-        if request.method == "GET":
-            return request.user and request.user.is_authenticated
-
-        # Reject other methods
-        return False
+        # Only Managers can use other methods
+        return request.user and request.user.is_authenticated

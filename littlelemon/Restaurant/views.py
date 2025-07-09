@@ -4,19 +4,14 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Menu, Booking
 from .serializers import ModelSerializer, BookingSerializer
 from .permissions import IsVisitorForPostOnly
+from rest_framework import viewsets
 
 
 # Create your views here.
-class BookingItemView(generics.ListCreateAPIView):
+class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     permission_classes = [IsVisitorForPostOnly]
-
-
-class SingleBookingItemView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Booking.objects.all()
-    serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
 
 
 class MenuItemView(generics.ListCreateAPIView):
